@@ -1,0 +1,33 @@
+{
+  "name": "userauth",
+  "description": "User authentication and management core module",
+  "keywords": [
+    "user authentication"
+  ],
+  "version": "0.0.1",
+  "homepage": "http://www.swagman.org/",
+  "author": {
+    "name": "Jussi Ohenoja",
+    "email": "juice@swagman.org",
+    "url": "http://www.swagman.org/juice/userauth/"
+  },
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juiceme/userauth.git"
+  },
+  "bugs": {
+    "url": "http://github.com/juiceme/userauth/issues"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+    "websocket": "=1.0.22",
+    "emailjs": "=1.0.2"
+  },
+  "scripts": {
+  },
+  "engine": [
+    "node >= v0.10.0"
+  ]
+}
