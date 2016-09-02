@@ -1,8 +1,8 @@
 var fs = require("fs");
 var email = require("emailjs/email");
-var Aes = require('../crypto/aes.js');
-Aes.Ctr = require('../crypto/aes-ctr.js');
-var sha1 = require('../crypto/sha1.js');
+var Aes = require('./crypto/aes.js');
+Aes.Ctr = require('./crypto/aes-ctr.js');
+var sha1 = require('./crypto/sha1.js');
 var datastorage = false;
 var servicelog = false;
 
@@ -443,7 +443,11 @@ function initialize(ds, sl) {
 }
 
 function getClientBody() {
-    return fs.readFileSync("./userauth/client.js", "utf8");
+    var clientbody = fs.readFileSync("./userauth/client.js", "utf8");
+    var aesjs = fs.readFileSync("./userauth/crypto/aes.js", "utf8");
+    var aesctrjs = fs.readFileSync("./userauth/crypto/aes-ctr.js", "utf8");
+    var sha1js = fs.readFileSync("./userauth/crypto/sha1.js", "utf8");
+    return clientbody + aesjs + aesctrjs + sha1js;
 }
 
 function decrypt(content, cookie) {
